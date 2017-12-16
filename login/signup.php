@@ -27,7 +27,6 @@
         <h2 class="form-signup-heading">Sign up</h2>
         <input name="newuser" id="newuser" type="text" class="form-control" placeholder="Username" autofocus>
         <input name="email" id="email" type="text" class="form-control" placeholder="Email">
-<br>
         <input name="password1" id="password1" type="password" class="form-control" placeholder="Password">
         <input name="password2" id="password2" type="password" class="form-control" placeholder="Repeat Password">
 
