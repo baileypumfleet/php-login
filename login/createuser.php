@@ -7,18 +7,19 @@ include_once 'config.php';
 //Pull username, generate new ID and hash password
 $newid = uniqid(rand(), false);
 $newuser = $_POST['newuser'];
+$newemail = $_POST['email'];
 $newpw = password_hash($_POST['password1'], PASSWORD_DEFAULT);
 $pw1 = $_POST['password1'];
 $pw2 = $_POST['password2'];
 
-    //Enables moderator verification (overrides user self-verification emails)
+//Enables moderator verification (overrides user self-verification emails)
 if (isset($admin_email)) {
 
-    $newemail = $admin_email;
+    $activationemail = $admin_email;
 
 } else {
 
-    $newemail = $_POST['email'];
+    $activationemail = $newemail;
 
 }
 //Validation rules
@@ -51,7 +52,7 @@ if ($pw1 != $pw2) {
 
             //Send verification email
             $m = new MailSender;
-            $m->sendMail($newemail, $newuser, $newid, 'Verify');
+            $m->sendMail($activationemail, $newuser, $newid, 'Verify');
 
         } else {
             //Failure
