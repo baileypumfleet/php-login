@@ -19,7 +19,7 @@ if (isset($admin_email)) {
 
 } else {
 
-    $activationemail = $_POST['email'];
+    $activationemail = $newemail;
 
 }
 //Validation rules
